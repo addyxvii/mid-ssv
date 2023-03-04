@@ -4,7 +4,7 @@ This repo showcases minimalistic backend for an LSD staking pool. It is for lear
 
 base for any solution used in production. It contains backend scripts and smart contracts to manage and stake Ether,
 
-minting a LSD token (ssvETH) and leveraging ssv.network to stake in a distributed and decentralized manner.
+minting a LSD token (lsdETH) and leveraging ssv.network to stake in a distributed and decentralized manner.
 
 ## Video walkthrough
 
@@ -51,11 +51,11 @@ is this minimalistic staking pool based on!
 
 ## How it works?
 
-- Staking has never been so easy, thanks to SSV, you can stake your ETH and earn ssvETH without running your own validator ! 🤑
+- Staking has never been so easy, thanks to SSV, you can stake your ETH and earn lsdETH without running your own validator ! 🤑
 
 ### User Actions
 
-- User stakes their eth to a staking contract for which he is minted a liquid staked derivative token, ssvETH.
+- User stakes their eth to a staking contract for which he is minted a liquid staked derivative token, lsdETH.
 
 - Creates a ethereum validator key and gives it to staking pool for depositing for activation
 
@@ -200,7 +200,7 @@ This repo works well with Goerli network as the network contains both the Beacon
 
 - you will need staking pool address for to run the backend script. you can find it in `contrat_addresses.json`, it is also printed on the console.
 
-Once you have deployed your contracts you can stake your sweet ETH! You will receive your liquid ssvETH representing your stake. If you need help with getting your hands on 32 goerliETH to test validator deployment, we should be able to help you on [our discord](https://discord.com/invite/AbYHBfjkDY).
+Once you have deployed your contracts you can stake your sweet ETH! You will receive your liquid lsdETH representing your stake. If you need help with getting your hands on 32 goerliETH to test validator deployment, we should be able to help you on [our discord](https://discord.com/invite/AbYHBfjkDY).
 
 When you have enough (32) goerliETH for to test depositing a validator change the value in the `stake.py` script or simply run this in your console:
 

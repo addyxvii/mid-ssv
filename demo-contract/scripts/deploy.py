@@ -18,12 +18,12 @@ def main():
     ssv_network_contract = "0xb9e155e65B5c4D66df28Da8E9a0957f06F11Bc04"
     ssv_token_address = "0x3a9f01091C446bdE031E39ea8354647AFef091E7"
 
-    # ssvETH = "0xfcE8F661AbBf1417E6f73593B9cf779aF83501a9"
+    # lsdETH = "0xfcE8F661AbBf1417E6f73593B9cf779aF83501a9"
     # stakingPool = "0xFc6f35B3D7e7d6c5789bC2c3566d8b1E9E11752a"
 
-    print("deploying ssvETH...")
-    # ssvETH = SSVETH.deploy({'from': deployer})
-    # print('ssvETH deployed to: ', ssvETH.address)
+    print("deploying lsdETH...")
+    # lsdETH = LSDETH.deploy({'from': deployer})
+    # print('lsdETH deployed to: ', lsdETH.address)
 
     print("deploying staking Pool...")
     stakingPool = StakingPool.deploy(whitelist, deposit_contract, withdrawal_creds,
@@ -31,7 +31,7 @@ def main():
     # print("staking pool deployed to:", stakingPool.address)
 
     # print("trasferring minting ownership...")
-    # ssvETH.transferOwnership(stakingPool.address, {
+    # lsdETH.transferOwnership(stakingPool.address, {
     #                          'from': deployer})
 
     print("testing staking...")
@@ -39,8 +39,8 @@ def main():
                       'from': deployer, 'gas_price': 87500000000})
 
     print("testing unStaking...")
-    ssvETH = SSVETH.at(stakingPool.ssvETH())
-    ssvETH.approve(stakingPool.address, 0.001 * 10 ** 18,
+    lsdETH = LSDETH.at(stakingPool.lsdETH())
+    lsdETH.approve(stakingPool.address, 0.001 * 10 ** 18,
                    {'from': deployer, 'gas_price': 87500000000})
     stakingPool.unStake(
         0.001 * 10 ** 18, {'from': deployer, 'gas_price': 87500000000})
@@ -49,7 +49,7 @@ def main():
         data = json.load(f)
 
     data["stakingPool_addr"] = stakingPool.address
-    data["ssvETH_addr"] = ssvETH.address
+    data["lsdETH_addr"] = lsdETH.address
 
     print("writing contract addresses into contrat_addresses.json")
     with open('contrat_addresses.json', 'w') as f:
